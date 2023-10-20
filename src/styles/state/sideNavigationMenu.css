@@ -1,0 +1,14 @@
+@import '../base/index.css';
+
+.menu-item-active, .menu-button:hover .menu-title-secondary, .menu-button:hover .menu-subtitle, .menu-button:hover .menu-button-icon-secondary {
+    color: var(--white);
+}
+
+.menu-option:hover {
+    opacity: 1;
+}
+
+.menu-options-container .menu-option:last-of-type {
+    color: var(--red);
+    opacity: 1;
+}

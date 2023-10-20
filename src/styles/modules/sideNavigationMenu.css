@@ -1,0 +1,90 @@
+@import '../base/index.css';
+
+.menu-container {
+    position: absolute;
+    top: 75%;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 208px;
+}
+
+.menu-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-logo-primary {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.menu-logo-secondary {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+
+.text-container {
+    margin: 0 8px;
+    text-align: left;
+}
+
+.menu-text-active {
+    color: var(--white) !important;
+}
+
+.menu-title-primary {
+    color: var(--primary-dark);
+}
+
+.menu-title-secondary {
+    color: var(--gray-dark);
+}
+
+.menu-subtitle {
+    color: var(--gray-dark);
+}
+
+.menu-button-icon-primary {
+    color: var(--primary-dark);
+}
+
+.menu-button-icon-secondary {
+    color: var(--gray-dark);
+
+}
+
+.menu-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    left: 230px;
+    bottom: 5%;
+    background: var(--white);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 16px;
+    width: 218px;
+}
+
+.menu-option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: var(--dark);
+    opacity: 0.5;
+}
+
