@@ -1,0 +1,56 @@
+@import './../base/index.css';
+
+
+
+
+
+.alert-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background-color: var(--light);
+    border-radius: 8px;
+    border: 1px solid var(--gray-x-light);
+    padding: 12px 16px;
+    max-width: 600px;
+}
+
+
+.alert-success-icon,
+.alert-warning-icon,
+.alert-danger-icon,
+.alert-close-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-success-icon {
+    color: var(--green-dark);
+    background-color: var(--green-light);
+}
+
+.alert-warning-icon {
+    color: var(--yellow-dark);
+    background-color: var(--yellow-light);
+}
+
+.alert-danger-icon {
+    color: var(--red-dark);
+    background-color: var(--red-light);
+}
+
+.alert-close-icon {
+    margin-left: auto;
+    cursor: pointer;
+}

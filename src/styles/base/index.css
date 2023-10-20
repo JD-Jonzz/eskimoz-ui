@@ -9,9 +9,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  outline: none;
-  border: none;
-  background: none;
 }
 
 a {
@@ -28,22 +25,18 @@ ol {
     list-style: none;
 }
 
+button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 :root {
     --button-corner-radius: 9px;
 
-
-
-
     --primary: #2F80ED;
     --primary-dark: #05153D;
-
-    --blue: #5A88FF;
-    --blue-bark: #0E44A8;
-    --blue-light: #D1E1FF;
-
-    --red: #FF5A5A;
-    --red-dark: #CD1F1F;
-    --red-light: #FFE1E1;
 
     --black: #000;
     --dark: #1C1D1E;
@@ -55,5 +48,32 @@ ol {
     --light: #F7F9FC;
     --white: #FFF;
 
+    --blue: #5A88FF;
+    --blue-bark: #0E44A8;
+    --blue-light: #D1E1FF;
 
+    --red: #FF5A5A;
+    --red-dark: #CD1F1F;
+    --red-light: #FFE1E1;
+
+    --yellow: #FFC03D;
+    --yellow-dark: #987122;
+    --yellow-light: #FFECC6;
+
+    --orange: #FF9F5A;
+    --orange-dark: #C85423;
+    --orange-light: #FFE1D1;
+
+    --green: #44DA86;
+    --green-dark: #168848;
+    --green-light: #C1F9D9;
+
+    --purple: #D67FFF;
+    --purple-dark: #861688;
+    --purple-light: #F0D1FF;
+
+}
+
+.w-full {
+    width: 100%;
 }

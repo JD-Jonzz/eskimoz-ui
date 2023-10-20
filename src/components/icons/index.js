@@ -1,0 +1,15 @@
+export { default as IconCheckmark } from './../icons/Checkmark'
+export { default as IconInfo } from './../icons/Info'
+export { default as IconWarning } from './../icons/Warning'
+export { default as IconClose } from './../icons/Close'
+export { default as IconEmail } from './../icons/Email'
+export { default as IconPlus } from './../icons/Plus'
+export { default as IconPin } from './../icons/Pin'
+export { default as IconPinFilled } from './../icons/PinFilled'
+export { default as IconThreedots } from './../icons/Threedots'
+export { default as IconLink } from './../icons/Link'
+export { default as IconFlagFR } from './../icons/FlagFR'
+export { default as IconFlagUK } from './../icons/FlagUK'
+export { default as IconFlagIT } from './../icons/FlagIT'
+
+

@@ -30,12 +30,8 @@ export const PopupRed = ({ title, details, icon, onConfirm, onCancel, ...props }
             </div>
 
             <div className="popup-buttons">
-                <Button variant="secondary" width="full" onClick={onCancel}>
-                    Cancel
-                </Button>
-                <Button variant="danger" width="full" onClick={onConfirm}>
-                    Confirm
-                </Button>
+                <Button text='Cancel' variant="secondary" width="full" onClick={onCancel} />
+                <Button text="Confirm" variant="danger" width="full" onClick={onConfirm} />
             </div>
 
         </div>

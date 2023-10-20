@@ -1,0 +1,62 @@
+@import '../base/index.css';
+
+
+
+
+.input-container {
+    height: 40px;
+}
+
+
+.input-label {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+.asterisk-input {
+    color: var(--primary);
+    line-height: 10px;
+}
+
+.input-element {
+    padding: 12px;
+    border: 1px solid var(--gray-x-light);
+    font-size: 13px;
+    height: 100%;
+    width: 100%;
+}
+
+.input-element::placeholder{
+    color: var(--gray-dark);
+}
+
+.input-text {
+    border-radius: 8px;
+}
+
+.input-url-email {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.input-url-email-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.input-side {
+    color: var(--gray-dark);
+    background-color: var(--gray-light);
+    border: 1px solid var(--gray-x-light);
+    padding: 11px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}

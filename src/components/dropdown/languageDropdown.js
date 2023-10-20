@@ -1,106 +1,99 @@
 import { Dropdown, Space } from 'antd';
-import React, { useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 import './../../styles/modules/language-dropdown.css'
+import PropTypes from 'prop-types';
+import { IconFlagFR, IconFlagIT, IconFlagUK } from '../icons';
 
 
+/**
+ * A language dropdown component.
+ *
+ */
+const LanguageDropdown = ({ onSelect, ...props }) => {
 
-const LanguageDropdown = () => {
+    const list= [
+        { icon: <IconFlagFR />, name: 'Français', value: 'français' },
+        { icon: <IconFlagUK />, name: 'English', value: 'english' },
+        { icon: <IconFlagIT />, name: 'Espagnol', value: 'espagnol' },
+        { icon: <IconFlagIT />, name: 'Allemand', value: 'allemand' },
+    ];
+    
     const [showDropdown, setShowDropdown] = useState(false);
     const [activeItems, setActiveItems] = useState([]);
 
-    const [list, setList] = useState([
-        { icon: <Icon />, name: 'Français', onClick: () => { alert('Set Français Language') } },
-        { icon: <Icon />, name: 'Anglais', onClick: () => { alert('Set Anglais Language') } },
-        { icon: <Icon />, name: 'Espagnol', onClick: () => { alert('Set Espagnol Language') } },
-        { icon: <Icon />, name: 'Allemand', onClick: () => { alert('Set Allemand Language') } }
-    ]);
-
-    const handleItemClick = (index) => {
-        if (activeItems.includes(index)) {
-            setActiveItems(activeItems.filter(itemIndex => itemIndex !== index));
+    const handleItemClick = (value) => {
+        if (activeItems.includes(value)) {
+            setActiveItems(activeItems.filter((item) => item !== value));
         } else {
-            setActiveItems([...activeItems, index]);
+            setActiveItems([...activeItems, value]);
         }
-    }
+    };
 
+    
     const handleArrowButtonClick = (event) => {
         event.stopPropagation();
         setShowDropdown(!showDropdown);
-    }
+    };
+
+    useEffect(() => {
+        onSelect(activeItems);
+    }, [activeItems, onSelect]);
 
     return (
         <div>
             <div className="language-dropdown-container">
+                {list.map((item) => {
+                    const isActive = activeItems.includes(item.value);
 
-                {list.map((item, index) => {
-                    const isActive = activeItems.includes(index);
-
-                    if (index === 0) {
+                    if (item.value === 'français') {
                         return (
                             <button
                                 className={`language-dropdown-button ${isActive && 'active'}`}
                                 type="button"
                                 key={item.name}
-                                onClick={() => handleItemClick(index)}
+                                onClick={() => handleItemClick(item.value)}
                             >
-                                <div className='language-dropdown-info'>
+                                <div className="language-dropdown-info">
                                     {item.icon}
                                     <span>{item.name}</span>
                                 </div>
-                                <button onClick={handleArrowButtonClick} className='language-dropdown-arrow'>
+                                <span onClick={handleArrowButtonClick} className="language-dropdown-arrow">
                                     <Arrow />
-                                </button>
+                                </span>
                             </button>
-                        )
+                        );
                     }
 
                     return (
-                        <>
+                        <Fragment key={item.name}>
                             {showDropdown && (
                                 <button
                                     className={`language-dropdown-button ${isActive && 'active'}`}
                                     type="button"
-                                    key={item.name}
-                                    onClick={() => handleItemClick(index)}
+                                    onClick={() => handleItemClick(item.value)}
                                 >
-                                    <div className='language-dropdown-info'>
+                                    <span className="language-dropdown-info">
                                         {item.icon}
                                         <span>{item.name}</span>
-                                    </div>
+                                    </span>
                                 </button>
                             )}
-
-                        </>
-                    )
+                        </Fragment>
+                    );
                 })}
             </div>
         </div>
     );
-}
+};
 
-
-LanguageDropdown.propTypes = {}
+LanguageDropdown.propTypes = {
+    onSelect: PropTypes.func,
+};
 
 export default LanguageDropdown;
 
 
-function Icon() {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={18} viewBox="0 0 24 18" fill="none">
-            <g id="Flags">
-                <rect id="Mask" x={0.25} y={0.25} width={23.5} height={16.6429} rx={1.75} fill="white" stroke="#F5F5F5" strokeWidth={0.5} />
-                <mask id="mask0_850_80275" maskUnits="userSpaceOnUse" x={0} y={0} width={24} height={18}>
-                    <rect id="Mask_2" x={0.25} y={0.25} width={23.5} height={16.6429} rx={1.75} fill="white" stroke="white" strokeWidth={0.5} />
-                </mask>
-                <g mask="url(#mask0_850_80275)">
-                    <rect id="Mask_3" x={16} width={8} height={17.1429} fill="#F44653" />
-                    <path id="Rectangle 2" fillRule="evenodd" clipRule="evenodd" d="M0 17.1429H8V0H0V17.1429Z" fill="#1035BB" />
-                </g>
-            </g>
-        </svg>
-    )
-}
 
 function Arrow() {
     return (

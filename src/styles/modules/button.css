@@ -47,3 +47,14 @@
 .width-full {
     width: 100%;
 }
+
+.dropdown-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid var(--gray);
+}
